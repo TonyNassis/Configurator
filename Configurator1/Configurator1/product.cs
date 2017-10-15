@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Configurator1
-{
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class product
-    {
-        public int ProductIdentifier { get; set; }
-        public string ProductName { get; set; }
-        public Nullable<double> BulkDensity { get; set; }
-        public Nullable<double> AngleofRepose { get; set; }
-        public string Description { get; set; }
-        public Nullable<int> TLSPattern { get; set; }
-        public Nullable<double> ParPercentageBlending { get; set; }
-    }
+namespace Configurator1 {
+	using System;
+	using System.Collections.Generic;
+
+	public partial class product {
+		public int ProductIdentifier { get; set; }
+		public string ProductName { get; set; }
+		public Nullable<double> BulkDensity { get; set; }
+		public Nullable<double> AngleofRepose { get; set; }
+		public string Description { get; set; }
+		public Nullable<int> TLSPattern { get; set; }
+		public Nullable<double> ParPercentageBlending { get; set; }
+	}
 }
