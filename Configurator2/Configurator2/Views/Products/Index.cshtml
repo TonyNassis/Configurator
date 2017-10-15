@@ -3,18 +3,48 @@
 @{
     ViewBag.Title = "Index";
 }
+<h2>Product List</h2>
 
-<h2>Index</h2>
-
-<h1></h1>
-<table>
-	@foreach (var product in Model) {
+<table class="table table-bordered table-hover">
+	<thead>
 		<tr>
-			<td>
-				@product.ProductName
-			</td>
+			<th>Identifier</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Bulk Density</th>
+			<th>Angle Of Repose</th>
+			<th>TLS Pattern</th>
+			<th>Blending %</th>
 		</tr>
+	</thead>
+	<tbody>
+		@foreach (var product in Model) {
+			<tr>
+				<td>
+					@product.ProductIdentifier
+				</td>
+				<td>
+					@product.ProductName
+				</td>
+				<td>
+					@product.Description
+				</td>
+				<td>
+					@product.BulkDensity
+				</td>
+				<td>
+					@product.AngleofRepose
+				</td>
+				<td>
+					@product.TLSPattern
+				</td>
+				<td>
+					@product.ParPercentageBlending
+				</td>
+			
+			</tr>
 
-	}
+		}
+	</tbody>
 	
 </table>
