@@ -180,6 +180,7 @@
       <DependentUpon>BRMO_IntegrationContext.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ProductFormViewModel.cs" />
+    <Compile Include="ViewModels\StockpileFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BRMO_IntegrationContext.Context.tt">
@@ -238,6 +239,7 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\ProductForm.cshtml" />
     <Content Include="Views\Stockpiles\Index.cshtml" />
+    <Content Include="Views\Stockpiles\StockpileForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
