@@ -1,23 +1,20 @@
-﻿
+﻿@model IEnumerable<Configurator2.product>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+<h1></h1>
 <table>
-	<tbody>
+	@foreach (var product in Model) {
+		<tr>
+			<td>
+				@product.ProductName
+			</td>
+		</tr>
 
-		@foreach(var pr in product) {
-			<tr>
-				<td>
-					@Model
-				</td>
-				<td>
-					@Model
-				</td>
-			</tr>
-		}
-
-	</tbody>
+	}
+	
 </table>
