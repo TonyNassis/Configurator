@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BRMO_Integration_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="ProductIdentifier" />
+          </Key>
+          <Property Name="ProductIdentifier" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="255" />
+          <Property Name="BulkDensity" Type="float" />
+          <Property Name="AngleofRepose" Type="float" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="TLSPattern" Type="int" />
+          <Property Name="ParPercentageBlending" Type="float" />
+        </EntityType>
+        <EntityType Name="Stockpile">
+          <Key>
+            <PropertyRef Name="StockpileIdentifier" />
+          </Key>
+          <Property Name="StockpileIdentifier" Type="int" Nullable="false" />
+          <Property Name="StockpileName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StockpileCapacity" Type="float" />
+          <Property Name="StockpileServiceTypeIdentifier" Type="int" Nullable="false" />
+          <Property Name="StockpileStartLimit" Type="float" />
+          <Property Name="StockpileCentreLimit" Type="float" />
+          <Property Name="StockpileEndLimit" Type="float" />
+          <Property Name="PlannedBuildProductIdentifier" Type="int" Nullable="false" />
+          <Property Name="BuildAngleOfRepose" Type="float" />
+          <Property Name="StackerNo" Type="int" />
+          <Property Name="ReclaimerQuadrant" Type="int" />
+          <Property Name="StartPositionOffset" Type="float" />
+          <Property Name="StartLuffingAngle" Type="float" />
+          <Property Name="ConeShellStepDistance" Type="float" />
+          <Property Name="BenchHeight" Type="float" />
+          <Property Name="BenchVolume" Type="float" />
+          <Property Name="InitialLuffAngle" Type="float" />
+          <Property Name="InitialLongTravelPosition" Type="float" />
+          <Property Name="StackingRegimeIdentifier" Type="int" />
+          <Property Name="StackingFormulaIdentifier" Type="bit" />
+          <Property Name="BLStartStackingDirection" Type="bit" />
+          <Property Name="BLStartReclaimingDirection" Type="bit" />
+          <Property Name="Bench1LuffAngle" Type="float" />
+          <Property Name="ParBench1SlewAngle" Type="float" />
+          <Property Name="Bench1LongTravelPosition" Type="float" />
+          <Property Name="Bench2LuffAngle" Type="float" />
+          <Property Name="Bench2SlewAngle" Type="float" />
+          <Property Name="Bench2LongTravelPosition" Type="float" />
+          <Property Name="Bench3LuffAngle" Type="float" />
+          <Property Name="Bench3SlewAngle" Type="float" />
+          <Property Name="Bench3LongTravelPosition" Type="float" />
+          <Property Name="StockpileLength" Type="float" />
+          <Property Name="LongTravelStepLength" Type="float" />
+          <Property Name="PilgrimStepLength" Type="float" />
+          <Property Name="InnerSlewLimit" Type="float" />
+          <Property Name="OuterSlewLimit" Type="float" />
+          <Property Name="InnerSlewTurnaroundLimit" Type="float" />
+          <Property Name="OuterSlewTurnaroundLimit" Type="float" />
+          <Property Name="ReclaimRateSetpoint" Type="float" />
+          <Property Name="InitialSlewAngle" Type="float" />
+          <Property Name="InitialSlewInnerTurnaroundLimit" Type="float" />
+          <Property Name="InitialSlewOuterTurnaroundLimit" Type="float" />
+        </EntityType>
+        <EntityContainer Name="BRMO_Integration_ModelStoreContainer">
+          <EntitySet Name="product" EntityType="Self.product" Schema="conf" store:Type="Tables" />
+          <EntitySet Name="Stockpile" EntityType="Self.Stockpile" Schema="conf" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BRMO_Integration_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="ProductIdentifier" />
+          </Key>
+          <Property Name="ProductIdentifier" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BulkDensity" Type="Double" />
+          <Property Name="AngleofRepose" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TLSPattern" Type="Int32" />
+          <Property Name="ParPercentageBlending" Type="Double" />
+        </EntityType>
+        <EntityType Name="Stockpile">
+          <Key>
+            <PropertyRef Name="StockpileIdentifier" />
+          </Key>
+          <Property Name="StockpileIdentifier" Type="Int32" Nullable="false" />
+          <Property Name="StockpileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StockpileCapacity" Type="Double" />
+          <Property Name="StockpileServiceTypeIdentifier" Type="Int32" Nullable="false" />
+          <Property Name="StockpileStartLimit" Type="Double" />
+          <Property Name="StockpileCentreLimit" Type="Double" />
+          <Property Name="StockpileEndLimit" Type="Double" />
+          <Property Name="PlannedBuildProductIdentifier" Type="Int32" Nullable="false" />
+          <Property Name="BuildAngleOfRepose" Type="Double" />
+          <Property Name="StackerNo" Type="Int32" />
+          <Property Name="ReclaimerQuadrant" Type="Int32" />
+          <Property Name="StartPositionOffset" Type="Double" />
+          <Property Name="StartLuffingAngle" Type="Double" />
+          <Property Name="ConeShellStepDistance" Type="Double" />
+          <Property Name="BenchHeight" Type="Double" />
+          <Property Name="BenchVolume" Type="Double" />
+          <Property Name="InitialLuffAngle" Type="Double" />
+          <Property Name="InitialLongTravelPosition" Type="Double" />
+          <Property Name="StackingRegimeIdentifier" Type="Int32" />
+          <Property Name="StackingFormulaIdentifier" Type="Boolean" />
+          <Property Name="BLStartStackingDirection" Type="Boolean" />
+          <Property Name="BLStartReclaimingDirection" Type="Boolean" />
+          <Property Name="Bench1LuffAngle" Type="Double" />
+          <Property Name="ParBench1SlewAngle" Type="Double" />
+          <Property Name="Bench1LongTravelPosition" Type="Double" />
+          <Property Name="Bench2LuffAngle" Type="Double" />
+          <Property Name="Bench2SlewAngle" Type="Double" />
+          <Property Name="Bench2LongTravelPosition" Type="Double" />
+          <Property Name="Bench3LuffAngle" Type="Double" />
+          <Property Name="Bench3SlewAngle" Type="Double" />
+          <Property Name="Bench3LongTravelPosition" Type="Double" />
+          <Property Name="StockpileLength" Type="Double" />
+          <Property Name="LongTravelStepLength" Type="Double" />
+          <Property Name="PilgrimStepLength" Type="Double" />
+          <Property Name="InnerSlewLimit" Type="Double" />
+          <Property Name="OuterSlewLimit" Type="Double" />
+          <Property Name="InnerSlewTurnaroundLimit" Type="Double" />
+          <Property Name="OuterSlewTurnaroundLimit" Type="Double" />
+          <Property Name="ReclaimRateSetpoint" Type="Double" />
+          <Property Name="InitialSlewAngle" Type="Double" />
+          <Property Name="InitialSlewInnerTurnaroundLimit" Type="Double" />
+          <Property Name="InitialSlewOuterTurnaroundLimit" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="BRMO_Integration_Context" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="products" EntityType="BRMO_Integration_Model.product" />
+          <EntitySet Name="Stockpiles" EntityType="Self.Stockpile" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BRMO_Integration_ModelStoreContainer" CdmEntityContainer="BRMO_Integration_Context">
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="BRMO_Integration_Model.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="ProductIdentifier" ColumnName="ProductIdentifier" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="BulkDensity" ColumnName="BulkDensity" />
+                <ScalarProperty Name="AngleofRepose" ColumnName="AngleofRepose" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TLSPattern" ColumnName="TLSPattern" />
+                <ScalarProperty Name="ParPercentageBlending" ColumnName="ParPercentageBlending" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stockpiles">
+            <EntityTypeMapping TypeName="BRMO_Integration_Model.Stockpile">
+              <MappingFragment StoreEntitySet="Stockpile">
+                <ScalarProperty Name="StockpileIdentifier" ColumnName="StockpileIdentifier" />
+                <ScalarProperty Name="StockpileName" ColumnName="StockpileName" />
+                <ScalarProperty Name="StockpileCapacity" ColumnName="StockpileCapacity" />
+                <ScalarProperty Name="StockpileServiceTypeIdentifier" ColumnName="StockpileServiceTypeIdentifier" />
+                <ScalarProperty Name="StockpileStartLimit" ColumnName="StockpileStartLimit" />
+                <ScalarProperty Name="StockpileCentreLimit" ColumnName="StockpileCentreLimit" />
+                <ScalarProperty Name="StockpileEndLimit" ColumnName="StockpileEndLimit" />
+                <ScalarProperty Name="PlannedBuildProductIdentifier" ColumnName="PlannedBuildProductIdentifier" />
+                <ScalarProperty Name="BuildAngleOfRepose" ColumnName="BuildAngleOfRepose" />
+                <ScalarProperty Name="StackerNo" ColumnName="StackerNo" />
+                <ScalarProperty Name="ReclaimerQuadrant" ColumnName="ReclaimerQuadrant" />
+                <ScalarProperty Name="StartPositionOffset" ColumnName="StartPositionOffset" />
+                <ScalarProperty Name="StartLuffingAngle" ColumnName="StartLuffingAngle" />
+                <ScalarProperty Name="ConeShellStepDistance" ColumnName="ConeShellStepDistance" />
+                <ScalarProperty Name="BenchHeight" ColumnName="BenchHeight" />
+                <ScalarProperty Name="BenchVolume" ColumnName="BenchVolume" />
+                <ScalarProperty Name="InitialLuffAngle" ColumnName="InitialLuffAngle" />
+                <ScalarProperty Name="InitialLongTravelPosition" ColumnName="InitialLongTravelPosition" />
+                <ScalarProperty Name="StackingRegimeIdentifier" ColumnName="StackingRegimeIdentifier" />
+                <ScalarProperty Name="StackingFormulaIdentifier" ColumnName="StackingFormulaIdentifier" />
+                <ScalarProperty Name="BLStartStackingDirection" ColumnName="BLStartStackingDirection" />
+                <ScalarProperty Name="BLStartReclaimingDirection" ColumnName="BLStartReclaimingDirection" />
+                <ScalarProperty Name="Bench1LuffAngle" ColumnName="Bench1LuffAngle" />
+                <ScalarProperty Name="ParBench1SlewAngle" ColumnName="ParBench1SlewAngle" />
+                <ScalarProperty Name="Bench1LongTravelPosition" ColumnName="Bench1LongTravelPosition" />
+                <ScalarProperty Name="Bench2LuffAngle" ColumnName="Bench2LuffAngle" />
+                <ScalarProperty Name="Bench2SlewAngle" ColumnName="Bench2SlewAngle" />
+                <ScalarProperty Name="Bench2LongTravelPosition" ColumnName="Bench2LongTravelPosition" />
+                <ScalarProperty Name="Bench3LuffAngle" ColumnName="Bench3LuffAngle" />
+                <ScalarProperty Name="Bench3SlewAngle" ColumnName="Bench3SlewAngle" />
+                <ScalarProperty Name="Bench3LongTravelPosition" ColumnName="Bench3LongTravelPosition" />
+                <ScalarProperty Name="StockpileLength" ColumnName="StockpileLength" />
+                <ScalarProperty Name="LongTravelStepLength" ColumnName="LongTravelStepLength" />
+                <ScalarProperty Name="PilgrimStepLength" ColumnName="PilgrimStepLength" />
+                <ScalarProperty Name="InnerSlewLimit" ColumnName="InnerSlewLimit" />
+                <ScalarProperty Name="OuterSlewLimit" ColumnName="OuterSlewLimit" />
+                <ScalarProperty Name="InnerSlewTurnaroundLimit" ColumnName="InnerSlewTurnaroundLimit" />
+                <ScalarProperty Name="OuterSlewTurnaroundLimit" ColumnName="OuterSlewTurnaroundLimit" />
+                <ScalarProperty Name="ReclaimRateSetpoint" ColumnName="ReclaimRateSetpoint" />
+                <ScalarProperty Name="InitialSlewAngle" ColumnName="InitialSlewAngle" />
+                <ScalarProperty Name="InitialSlewInnerTurnaroundLimit" ColumnName="InitialSlewInnerTurnaroundLimit" />
+                <ScalarProperty Name="InitialSlewOuterTurnaroundLimit" ColumnName="InitialSlewOuterTurnaroundLimit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
