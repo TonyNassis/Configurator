@@ -24,7 +24,7 @@
 					@product.ProductIdentifier
 				</td>
 				<td>
-					@product.ProductName
+					@Html.ActionLink(product.ProductName,"Edit","Products", new { id = product.ProductIdentifier},null)
 				</td>
 				<td>
 					@product.Description
