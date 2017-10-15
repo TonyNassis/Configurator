@@ -10,10 +10,25 @@
 	</div>
 
 	<div class="form-group">
+		@Html.LabelFor(m => m.BulkDensity):
+		@Html.TextBoxFor(m => m.BulkDensity, new { @class = "form-control" })
+	</div>
+
+	<div class="form-group">
+		@Html.LabelFor(m => m.AngleOfRepose):
+		@Html.TextBoxFor(m => m.AngleOfRepose, new { @class = "form-control" })
+	</div>
+
+	<div class="form-group">
+		@Html.LabelFor(m => m.TLSPattern):
+		@Html.TextBoxFor(m => m.TLSPattern, new { @class = "form-control" })
+	</div>
+	
+	<div class="form-group">
 		@Html.LabelFor(m=>m.ParPercentageBlending):
 		@Html.TextBoxFor(m=>m.ParPercentageBlending,new { @class = "form-control" })
 	</div>
-
+	
 	@Html.HiddenFor(m=>m.ProductIdentifier)
 
 	<button type="submit" class="btn btn-primary">Save Changes</button>

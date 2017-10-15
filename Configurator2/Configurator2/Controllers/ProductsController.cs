@@ -39,6 +39,9 @@ namespace Configurator2.Controllers {
 			var viewModel = new ProductFormViewModel {
 				ProductIdentifier = product.ProductIdentifier,
 				ProductName = product.ProductName,
+				BulkDensity = product.BulkDensity,
+				AngleOfRepose = product.AngleofRepose,
+				TLSPattern = product.TLSPattern,
 				ParPercentageBlending = product.ParPercentageBlending
 			};
 
@@ -52,8 +55,12 @@ namespace Configurator2.Controllers {
 				return HttpNotFound();
 			} else {
 				var productInDb = _context.products.Single(m => m.ProductIdentifier == product.ProductIdentifier);
-				productInDb.ParPercentageBlending = product.ParPercentageBlending;
 
+				productInDb.BulkDensity = product.BulkDensity;
+				productInDb.AngleofRepose = product.AngleOfRepose;
+				productInDb.TLSPattern = product.TLSPattern;
+				productInDb.ParPercentageBlending = product.ParPercentageBlending;
+				
 				_context.SaveChanges();
 
 				return RedirectToAction("Index", "Products");
