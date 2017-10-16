@@ -28,8 +28,10 @@
 			<tr><td>@Html.LabelFor(m => m.Bench3SlewAngle)</td><td>@Html.TextBoxFor(m => m.Bench3SlewAngle)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.BenchHeight)</td><td>@Html.TextBoxFor(m => m.BenchHeight)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.BenchVolume)</td><td>@Html.TextBoxFor(m => m.BenchVolume)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.BLStartReclaimingDirection)</td><td>@Html.TextBoxFor(m => m.BLStartReclaimingDirection)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.BLStartStackingDirection)</td><td>@Html.TextBoxFor(m => m.BLStartStackingDirection)</td></tr>
+
+			<tr><td>@Html.LabelFor(m => m.BLStartReclaimingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartReclaimingDirection)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.BLStartStackingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartStackingDirection)</td></tr>
+			
 			<tr><td>@Html.LabelFor(m => m.BuildAngleOfRepose)</td><td>@Html.TextBoxFor(m => m.BuildAngleOfRepose)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.ConeShellStepDistance)</td><td>@Html.TextBoxFor(m => m.ConeShellStepDistance)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.InitialLongTravelPosition)</td><td>@Html.TextBoxFor(m => m.InitialLongTravelPosition)</td></tr>
@@ -48,7 +50,9 @@
 			<tr><td>@Html.LabelFor(m => m.ReclaimerQuadrant)</td><td>@Html.TextBoxFor(m => m.ReclaimerQuadrant)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.ReclaimRateSetpoint)</td><td>@Html.TextBoxFor(m => m.ReclaimRateSetpoint)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StackerNo)</td><td>@Html.TextBoxFor(m => m.StackerNo)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StackingFormulaIdentifier)</td><td>@Html.TextBoxFor(m => m.StackingFormulaIdentifier)</td></tr>
+			
+			<tr><td>@Html.LabelFor(m => m.StackingFormulaIdentifier)</td><td>@Html.CheckBoxFor(m => m.StackingFormulaIdentifier)</td></tr>
+			
 			<tr><td>@Html.LabelFor(m => m.StackingRegimeIdentifier)</td><td>@Html.TextBoxFor(m => m.StackingRegimeIdentifier)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StartLuffingAngle)</td><td>@Html.TextBoxFor(m => m.StartLuffingAngle)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StartPositionOffset)</td><td>@Html.TextBoxFor(m => m.StartPositionOffset)</td></tr>

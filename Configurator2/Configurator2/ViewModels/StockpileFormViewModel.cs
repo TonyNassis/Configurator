@@ -27,9 +27,9 @@ namespace Configurator2.ViewModels {
 		public double? InitialLuffAngle { get; set; }
 		public double? InitialLongTravelPosition { get; set; }
 		public int? StackingRegimeIdentifier { get; set; }
-		public bool? StackingFormulaIdentifier { get; set; }
-		public bool? BLStartStackingDirection { get; set; }
-		public bool? BLStartReclaimingDirection { get; set; }
+		public bool StackingFormulaIdentifier { get; set; }
+		public bool BLStartStackingDirection { get; set; }
+		public bool BLStartReclaimingDirection { get; set; }
 		public double? Bench1LuffAngle { get; set; }
 		public double? ParBench1SlewAngle { get; set; }
 		public double? Bench1LongTravelPosition { get; set; }

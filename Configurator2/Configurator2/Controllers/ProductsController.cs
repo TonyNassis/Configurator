@@ -45,7 +45,7 @@ namespace Configurator2.Controllers {
 				ParPercentageBlending = product.ParPercentageBlending
 			};
 
-			ViewBag.Passed = false;
+			ViewBag.Passed = true;
 
 			return View("ProductForm", viewModel);
 		}
