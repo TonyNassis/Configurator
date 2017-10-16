@@ -1,9 +1,9 @@
 ﻿@model Configurator2.ViewModels.ProductFormViewModel
 @{
-    ViewBag.Title = "ProductForm";
+	ViewBag.Title = "ProductForm";
 }
 
-@using(Html.BeginForm("Save", "Products")) {
+@using (Html.BeginForm("Save", "Products")) {
 
 	<div class="form-group">
 		<h2>Product: @Model.ProductName</h2>
@@ -11,25 +11,32 @@
 
 	<div class="form-group">
 		@Html.LabelFor(m => m.BulkDensity):
-		@Html.TextBoxFor(m => m.BulkDensity, new { @class = "form-control" })
+		@Html.TextBoxFor(m => m.BulkDensity, ViewBag.Passed ? (Object)new { @class = "form-control" } : (Object)new { @class = "form-control", @readonly = "readonly" })
 	</div>
 
 	<div class="form-group">
 		@Html.LabelFor(m => m.AngleOfRepose):
-		@Html.TextBoxFor(m => m.AngleOfRepose, new { @class = "form-control" })
+		@Html.TextBoxFor(m => m.AngleOfRepose, ViewBag.Passed ? (Object)new { @class = "form-control" } : (Object)new { @class = "form-control", @readonly = "readonly" })
 	</div>
 
 	<div class="form-group">
 		@Html.LabelFor(m => m.TLSPattern):
-		@Html.TextBoxFor(m => m.TLSPattern, new { @class = "form-control" })
+		@Html.TextBoxFor(m => m.TLSPattern, ViewBag.Passed ? (Object)new { @class = "form-control" } : (Object)new { @class = "form-control", @readonly = "readonly" })
 	</div>
-	
-	<div class="form-group">
-		@Html.LabelFor(m=>m.ParPercentageBlending):
-		@Html.TextBoxFor(m=>m.ParPercentageBlending,new { @class = "form-control" })
-	</div>
-	
-	@Html.HiddenFor(m=>m.ProductIdentifier)
 
-	<button type="submit" class="btn btn-primary">Save Changes</button>
+	<div class="form-group">
+		@Html.LabelFor(m => m.ParPercentageBlending):
+		@Html.TextBoxFor(m => m.ParPercentageBlending, ViewBag.Passed ? (Object)new { @class = "form-control" } : (Object)new { @class = "form-control", @readonly = "readonly" })
+	</div>
+
+	@Html.HiddenFor(m => m.ProductIdentifier)
+
+	if (ViewBag.Passed == true) {
+
+		<button type="submit" class="btn btn-primary">Save Changes</button>
+	} else {
+		@Html.ActionLink("Back To Products","Index","Products", new { @class="btn btn-primary"})
+	}
+
 }
+
