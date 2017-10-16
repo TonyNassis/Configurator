@@ -1,11 +1,11 @@
-﻿@model Configurator2.ViewModels.StockpileFormViewModel 
+﻿@model Configurator2.ViewModels.StockpileFormViewModel
 @{
-    ViewBag.Title = "StockpileForm";
+	ViewBag.Title = "StockpileForm";
 }
 
 <h2>Stockpile: @Model.StockpileName</h2>
 
-@using(Html.BeginForm("Save", "Stockpiles")) {
+@using (Html.BeginForm("Save", "Stockpiles")) {
 
 	<table class="table table-bordered table-hover">
 
@@ -17,7 +17,7 @@
 		</thead>
 
 		<tbody>
-					
+
 			<tr><td>@Html.LabelFor(m => m.Bench1LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench1LongTravelPosition)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.Bench1LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench1LuffAngle)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.Bench2LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench2LongTravelPosition)</td></tr>
@@ -31,7 +31,7 @@
 
 			<tr><td>@Html.LabelFor(m => m.BLStartReclaimingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartReclaimingDirection)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.BLStartStackingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartStackingDirection)</td></tr>
-			
+
 			<tr><td>@Html.LabelFor(m => m.BuildAngleOfRepose)</td><td>@Html.TextBoxFor(m => m.BuildAngleOfRepose)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.ConeShellStepDistance)</td><td>@Html.TextBoxFor(m => m.ConeShellStepDistance)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.InitialLongTravelPosition)</td><td>@Html.TextBoxFor(m => m.InitialLongTravelPosition)</td></tr>
@@ -50,24 +50,61 @@
 			<tr><td>@Html.LabelFor(m => m.ReclaimerQuadrant)</td><td>@Html.TextBoxFor(m => m.ReclaimerQuadrant)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.ReclaimRateSetpoint)</td><td>@Html.TextBoxFor(m => m.ReclaimRateSetpoint)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StackerNo)</td><td>@Html.TextBoxFor(m => m.StackerNo)</td></tr>
-			
+
 			<tr><td>@Html.LabelFor(m => m.StackingFormulaIdentifier)</td><td>@Html.CheckBoxFor(m => m.StackingFormulaIdentifier)</td></tr>
-			
-			<tr><td>@Html.LabelFor(m => m.StackingRegimeIdentifier)</td><td>@Html.TextBoxFor(m => m.StackingRegimeIdentifier)</td></tr>
+
+			<tr>
+				<td>
+					@Html.LabelFor(m => m.StackingRegimeIdentifier)
+				</td>
+				<td>
+					@Html.DropDownListFor(
+						m => m.StackingRegimeIdentifier,
+						new SelectList(
+							new List<object> {
+								new { value = 0, text="Cone Shell"},
+						  		new { value = 1, text="Chevron"},
+						  		new { value = 2, text="Bypass"}
+							},
+							"value",
+							"text"
+						)
+					 )
+				</td>
+			</tr>
 			<tr><td>@Html.LabelFor(m => m.StartLuffingAngle)</td><td>@Html.TextBoxFor(m => m.StartLuffingAngle)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StartPositionOffset)</td><td>@Html.TextBoxFor(m => m.StartPositionOffset)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StockpileCapacity)</td><td>@Html.TextBoxFor(m => m.StockpileCapacity)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StockpileCentreLimit)</td><td>@Html.TextBoxFor(m => m.StockpileCentreLimit)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StockpileEndLimit)</td><td>@Html.TextBoxFor(m => m.StockpileEndLimit)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StockpileLength)</td><td>@Html.TextBoxFor(m => m.StockpileLength)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StockpileServiceTypeIdentifier)</td><td>@Html.TextBoxFor(m => m.StockpileServiceTypeIdentifier)</td></tr>
+			<tr>
+				<td>
+					@Html.LabelFor(m => m.StockpileServiceTypeIdentifier)
+				</td>
+				<td>
+					@Html.DropDownListFor(
+						m => m.StockpileServiceTypeIdentifier,
+						new SelectList(
+							new List<object> {
+								new { value = 0, text="Unknown"},
+						  		new { value = 1, text="Single"},
+						  		new { value = 2, text="Double"},
+						  		new { value = 3, text="Bypass"},
+							},
+							"value",
+							"text"
+						)
+					  )
+				</td>
+			</tr>
 			<tr><td>@Html.LabelFor(m => m.StockpileStartLimit)</td><td>@Html.TextBoxFor(m => m.StockpileStartLimit)</td></tr>
-			
+
 		</tbody>
 
 	</table>
 
-	@Html.HiddenFor(m=>m.StockpileIdentifier)
+	@Html.HiddenFor(m => m.StockpileIdentifier)
 
 	<button type="submit" class="btn btn-primary">Save Changes</button>
 }
