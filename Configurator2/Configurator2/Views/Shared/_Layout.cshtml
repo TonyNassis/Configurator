@@ -29,6 +29,10 @@
 
 					<ul class="nav navbar-nav navbar-right">
 
+						@if (Session[Sessions.EditStatus] == null) {
+							Session[Sessions.EditStatus] = EnumEditStatus.EditDisabled;
+						}
+
 						@if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled) 
 						{
 							<li>@Html.ActionLink("Edit Status => Enabled", "DisableEdit", "Home") </li>
