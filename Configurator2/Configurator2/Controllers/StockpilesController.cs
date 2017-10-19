@@ -1,4 +1,5 @@
-﻿using Configurator2.ViewModels;
+﻿using Configurator2.Models;
+using Configurator2.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,6 @@ namespace Configurator2.Controllers {
 		public ActionResult Edit(int id) {
 
 			var stockpile = _context.Stockpiles.SingleOrDefault(m => m.StockpileIdentifier == id);
-
-
 
 			if (stockpile == null) {
 				return HttpNotFound();
@@ -100,6 +99,11 @@ namespace Configurator2.Controllers {
 				InitialSlewOuterTurnaroundLimit = stockpile.InitialSlewOuterTurnaroundLimit,
 			};
 
+			if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled)
+				ViewBag.Passed = true;
+			else
+				ViewBag.Passed = false;
+			
 			return View("StockpileForm", viewModel);
 
 		}

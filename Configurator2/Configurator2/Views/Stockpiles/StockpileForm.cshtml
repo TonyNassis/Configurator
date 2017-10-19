@@ -3,6 +3,14 @@
 	ViewBag.Title = "StockpileForm";
 }
 
+@{
+	//-- Enable editing if passed -------------
+	var EditAttr = ViewBag.Passed ?
+		(Object)new { @class = "form-control" }
+		: (Object)new { @class = "form-control", @readonly = "readonly" };
+}
+
+
 <h2>Stockpile: @Model.StockpileName</h2>
 
 @using (Html.BeginForm("Save", "Stockpiles")) {
@@ -18,40 +26,40 @@
 
 		<tbody>
 
-			<tr><td>@Html.LabelFor(m => m.Bench1LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench1LongTravelPosition)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench1LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench1LuffAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench2LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench2LongTravelPosition)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench2LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench2LuffAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench2SlewAngle)</td><td>@Html.TextBoxFor(m => m.Bench2SlewAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench3LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench3LongTravelPosition)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench3LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench3LuffAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.Bench3SlewAngle)</td><td>@Html.TextBoxFor(m => m.Bench3SlewAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.BenchHeight)</td><td>@Html.TextBoxFor(m => m.BenchHeight)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.BenchVolume)</td><td>@Html.TextBoxFor(m => m.BenchVolume)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench1LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench1LongTravelPosition, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench1LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench1LuffAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench2LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench2LongTravelPosition, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench2LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench2LuffAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench2SlewAngle)</td><td>@Html.TextBoxFor(m => m.Bench2SlewAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench3LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench3LongTravelPosition, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench3LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench3LuffAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.Bench3SlewAngle)</td><td>@Html.TextBoxFor(m => m.Bench3SlewAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.BenchHeight)</td><td>@Html.TextBoxFor(m => m.BenchHeight, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.BenchVolume)</td><td>@Html.TextBoxFor(m => m.BenchVolume, EditAttr)</td></tr>
 
-			<tr><td>@Html.LabelFor(m => m.BLStartReclaimingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartReclaimingDirection)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.BLStartStackingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartStackingDirection)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.BLStartReclaimingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartReclaimingDirection, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.BLStartStackingDirection)</td><td>@Html.CheckBoxFor(m => m.BLStartStackingDirection, EditAttr)</td></tr>
 
-			<tr><td>@Html.LabelFor(m => m.BuildAngleOfRepose)</td><td>@Html.TextBoxFor(m => m.BuildAngleOfRepose)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.ConeShellStepDistance)</td><td>@Html.TextBoxFor(m => m.ConeShellStepDistance)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InitialLongTravelPosition)</td><td>@Html.TextBoxFor(m => m.InitialLongTravelPosition)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InitialLuffAngle)</td><td>@Html.TextBoxFor(m => m.InitialLuffAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InitialSlewAngle)</td><td>@Html.TextBoxFor(m => m.InitialSlewAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InitialSlewInnerTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.InitialSlewInnerTurnaroundLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InitialSlewOuterTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.InitialSlewOuterTurnaroundLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InnerSlewLimit)</td><td>@Html.TextBoxFor(m => m.InnerSlewLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.InnerSlewTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.InnerSlewTurnaroundLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.LongTravelStepLength)</td><td>@Html.TextBoxFor(m => m.LongTravelStepLength)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.OuterSlewLimit)</td><td>@Html.TextBoxFor(m => m.OuterSlewLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.OuterSlewTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.OuterSlewTurnaroundLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.ParBench1SlewAngle)</td><td>@Html.TextBoxFor(m => m.ParBench1SlewAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.PilgrimStepLength)</td><td>@Html.TextBoxFor(m => m.PilgrimStepLength)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.PlannedBuildProductIdentifier)</td><td>@Html.TextBoxFor(m => m.PlannedBuildProductIdentifier)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.ReclaimerQuadrant)</td><td>@Html.TextBoxFor(m => m.ReclaimerQuadrant)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.ReclaimRateSetpoint)</td><td>@Html.TextBoxFor(m => m.ReclaimRateSetpoint)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StackerNo)</td><td>@Html.TextBoxFor(m => m.StackerNo)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.BuildAngleOfRepose)</td><td>@Html.TextBoxFor(m => m.BuildAngleOfRepose, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.ConeShellStepDistance)</td><td>@Html.TextBoxFor(m => m.ConeShellStepDistance, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InitialLongTravelPosition)</td><td>@Html.TextBoxFor(m => m.InitialLongTravelPosition, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InitialLuffAngle)</td><td>@Html.TextBoxFor(m => m.InitialLuffAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InitialSlewAngle)</td><td>@Html.TextBoxFor(m => m.InitialSlewAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InitialSlewInnerTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.InitialSlewInnerTurnaroundLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InitialSlewOuterTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.InitialSlewOuterTurnaroundLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InnerSlewLimit)</td><td>@Html.TextBoxFor(m => m.InnerSlewLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.InnerSlewTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.InnerSlewTurnaroundLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.LongTravelStepLength)</td><td>@Html.TextBoxFor(m => m.LongTravelStepLength, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.OuterSlewLimit)</td><td>@Html.TextBoxFor(m => m.OuterSlewLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.OuterSlewTurnaroundLimit)</td><td>@Html.TextBoxFor(m => m.OuterSlewTurnaroundLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.ParBench1SlewAngle)</td><td>@Html.TextBoxFor(m => m.ParBench1SlewAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.PilgrimStepLength)</td><td>@Html.TextBoxFor(m => m.PilgrimStepLength, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.PlannedBuildProductIdentifier)</td><td>@Html.TextBoxFor(m => m.PlannedBuildProductIdentifier, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.ReclaimerQuadrant)</td><td>@Html.TextBoxFor(m => m.ReclaimerQuadrant, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.ReclaimRateSetpoint)</td><td>@Html.TextBoxFor(m => m.ReclaimRateSetpoint, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StackerNo)</td><td>@Html.TextBoxFor(m => m.StackerNo, EditAttr)</td></tr>
 
-			<tr><td>@Html.LabelFor(m => m.StackingFormulaIdentifier)</td><td>@Html.CheckBoxFor(m => m.StackingFormulaIdentifier)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StackingFormulaIdentifier)</td><td>@Html.CheckBoxFor(m => m.StackingFormulaIdentifier, EditAttr)</td></tr>
 
 			<tr>
 				<td>
@@ -69,15 +77,16 @@
 							"value",
 							"text"
 						)
+						, EditAttr
 					 )
 				</td>
 			</tr>
-			<tr><td>@Html.LabelFor(m => m.StartLuffingAngle)</td><td>@Html.TextBoxFor(m => m.StartLuffingAngle)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StartPositionOffset)</td><td>@Html.TextBoxFor(m => m.StartPositionOffset)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StockpileCapacity)</td><td>@Html.TextBoxFor(m => m.StockpileCapacity)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StockpileCentreLimit)</td><td>@Html.TextBoxFor(m => m.StockpileCentreLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StockpileEndLimit)</td><td>@Html.TextBoxFor(m => m.StockpileEndLimit)</td></tr>
-			<tr><td>@Html.LabelFor(m => m.StockpileLength)</td><td>@Html.TextBoxFor(m => m.StockpileLength)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StartLuffingAngle)</td><td>@Html.TextBoxFor(m => m.StartLuffingAngle, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StartPositionOffset)</td><td>@Html.TextBoxFor(m => m.StartPositionOffset, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StockpileCapacity)</td><td>@Html.TextBoxFor(m => m.StockpileCapacity, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StockpileCentreLimit)</td><td>@Html.TextBoxFor(m => m.StockpileCentreLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StockpileEndLimit)</td><td>@Html.TextBoxFor(m => m.StockpileEndLimit, EditAttr)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StockpileLength)</td><td>@Html.TextBoxFor(m => m.StockpileLength, EditAttr)</td></tr>
 			<tr>
 				<td>
 					@Html.LabelFor(m => m.StockpileServiceTypeIdentifier)
@@ -95,10 +104,11 @@
 							"value",
 							"text"
 						)
+						, EditAttr
 					  )
 				</td>
 			</tr>
-			<tr><td>@Html.LabelFor(m => m.StockpileStartLimit)</td><td>@Html.TextBoxFor(m => m.StockpileStartLimit)</td></tr>
+			<tr><td>@Html.LabelFor(m => m.StockpileStartLimit)</td><td>@Html.TextBoxFor(m => m.StockpileStartLimit, EditAttr)</td></tr>
 
 		</tbody>
 
@@ -106,5 +116,10 @@
 
 	@Html.HiddenFor(m => m.StockpileIdentifier)
 
-	<button type="submit" class="btn btn-primary">Save Changes</button>
+	if (ViewBag.Passed == true) {
+		<button type="submit" class="btn btn-primary">Save Changes</button>
+	} else {
+		@Html.ActionLink("Back To Stockpiles", "Index", "Stockpiles", new { @class = "btn btn-primary" })
+	}
+
 }
