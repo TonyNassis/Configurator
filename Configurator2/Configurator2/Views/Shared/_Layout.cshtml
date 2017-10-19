@@ -31,10 +31,10 @@
 
 						@if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled) 
 						{
-							<li>@Html.ActionLink("Editing Enabled", "DisableEdit", "Home") </li>
+							<li>@Html.ActionLink("Edit Status => Enabled", "DisableEdit", "Home") </li>
 						} else 
 						{
-							<li> @Html.ActionLink("Editing Disabled", "EnableEdit", "Home") </li >
+							<li> @Html.ActionLink("Edit Status => Disabled", "EnableEdit", "Home") </li >
  						}
 
 					</ul>
@@ -46,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Stockyard Configurator</p>
+            <p>Stockyard Configurator (Rev2 - 19 October 2017)</p>
         </footer>
     </div>
 

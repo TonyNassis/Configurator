@@ -10,46 +10,48 @@
 		<tr>
 			<th>StockpileIdentifier</th>
 			<th>StockpileName</th>
-			<th>StockpileCapacity </th>
-			<th>StockpileServiceTypeIdentifier</th>
-			<th>StockpileStartLimit </th>
-			<th>StockpileCentreLimit </th>
-			<th>StockpileEndLimit </th>
-			<th>PlannedBuildProductIdentifier</th>
-			<th>BuildAngleOfRepose </th>
-			<th>StackerNo </th>
-			<th>ReclaimerQuadrant </th>
-			<th>StartPositionOffset </th>
-			<th>StartLuffingAngle </th>
-			<th>ConeShellStepDistance </th>
-			<th>BenchHeight </th>
-			<th>BenchVolume </th>
-			<th>InitialLuffAngle </th>
-			<th>InitialLongTravelPosition</th>
-			<th>StackingRegimeIdentifier </th>
-			<th>StackingFormulaIdentifier </th>
-			<th>BLStartStackingDirection </th>
-			<th>BLStartReclaimingDirection </th>
-			<th>Bench1LuffAngle </th>
-			<th>ParBench1SlewAngle </th>
+
 			<th>Bench1LongTravelPosition</th>
+			<th>Bench1LuffAngle </th>
+			<th>Bench2LongTravelPosition</th>
 			<th>Bench2LuffAngle </th>
 			<th>Bench2SlewAngle </th>
-			<th>Bench2LongTravelPosition</th>
+			<th>Bench3LongTravelPosition</th>
 			<th>Bench3LuffAngle </th>
 			<th>Bench3SlewAngle </th>
-			<th>Bench3LongTravelPosition</th>
-			<th>StockpileLength </th>
-			<th>LongTravelStepLength </th>
-			<th>PilgrimStepLength </th>
-			<th>InnerSlewLimit </th>
-			<th>OuterSlewLimit </th>
-			<th>InnerSlewTurnaroundLimit</th>
-			<th>OuterSlewTurnaroundLimit </th>
-			<th>ReclaimRateSetpoint </th>
+			<th>BenchHeight </th>
+			<th>BenchVolume </th>
+			<th>BLStartReclaimingDirection </th>
+			<th>BLStartStackingDirection </th>
+			<th>BuildAngleOfRepose </th>
+			<th>ConeShellStepDistance </th>
+			<th>InitialLongTravelPosition</th>
+			<th>InitialLuffAngle </th>
 			<th>InitialSlewAngle </th>
 			<th>InitialSlewInnerTurnaroundLimit</th>
 			<th>InitialSlewOuterTurnaroundLimit </th>
+			<th>InnerSlewLimit </th>
+			<th>InnerSlewTurnaroundLimit</th>
+			<th>LongTravelStepLength </th>
+			<th>OuterSlewLimit </th>
+			<th>OuterSlewTurnaroundLimit </th>
+			<th>ParBench1SlewAngle </th>
+			<th>PilgrimStepLength </th>
+			<th>PlannedBuildProductIdentifier</th>
+			<th>ReclaimerQuadrant </th>
+			<th>ReclaimRateSetpoint </th>
+			<th>StackerNo </th>
+			<th>StackingFormulaIdentifier </th>
+			<th>StackingRegimeIdentifier </th>
+			<th>StartLuffingAngle </th>
+			<th>StartPositionOffset </th>
+			<th>StockpileCapacity </th>
+			<th>StockpileCentreLimit </th>
+			<th>StockpileEndLimit </th>
+			<th>StockpileLength </th>
+			<th>StockpileServiceTypeIdentifier</th>
+			<th>StockpileStartLimit </th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -59,46 +61,48 @@
 				<td>
 					@Html.ActionLink(sp.StockpileName, "Edit", "Stockpiles", new {id=sp.StockpileIdentifier},null)
 				</td>
-				<td>@sp.StockpileCapacity </td>
-				<td>@sp.StockpileServiceTypeIdentifier</td>
-				<td>@sp.StockpileStartLimit </td>
-				<td>@sp.StockpileCentreLimit </td>
-				<td>@sp.StockpileEndLimit </td>
-				<td>@sp.PlannedBuildProductIdentifier</td>
-				<td>@sp.BuildAngleOfRepose </td>
-				<td>@sp.StackerNo </td>
-				<td>@sp.ReclaimerQuadrant </td>
-				<td>@sp.StartPositionOffset </td>
-				<td>@sp.StartLuffingAngle </td>
-				<td>@sp.ConeShellStepDistance </td>
-				<td>@sp.BenchHeight </td>
-				<td>@sp.BenchVolume </td>
-				<td>@sp.InitialLuffAngle </td>
-				<td>@sp.InitialLongTravelPosition</td>
-				<td>@sp.StackingRegimeIdentifier </td>
-				<td>@sp.StackingFormulaIdentifier </td>
-				<td>@sp.BLStartStackingDirection </td>
-				<td>@sp.BLStartReclaimingDirection </td>
-				<td>@sp.Bench1LuffAngle </td>
-				<td>@sp.ParBench1SlewAngle </td>
+				
 				<td>@sp.Bench1LongTravelPosition</td>
+				<td>@sp.Bench1LuffAngle </td>
+				<td>@sp.Bench2LongTravelPosition</td>
 				<td>@sp.Bench2LuffAngle </td>
 				<td>@sp.Bench2SlewAngle </td>
-				<td>@sp.Bench2LongTravelPosition</td>
+				<td>@sp.Bench3LongTravelPosition</td>
 				<td>@sp.Bench3LuffAngle </td>
 				<td>@sp.Bench3SlewAngle </td>
-				<td>@sp.Bench3LongTravelPosition</td>
-				<td>@sp.StockpileLength </td>
-				<td>@sp.LongTravelStepLength </td>
-				<td>@sp.PilgrimStepLength </td>
-				<td>@sp.InnerSlewLimit </td>
-				<td>@sp.OuterSlewLimit </td>
-				<td>@sp.InnerSlewTurnaroundLimit</td>
-				<td>@sp.OuterSlewTurnaroundLimit </td>
-				<td>@sp.ReclaimRateSetpoint </td>
+				<td>@sp.BenchHeight </td>
+				<td>@sp.BenchVolume </td>
+				<td>@sp.BLStartReclaimingDirection </td>
+				<td>@sp.BLStartStackingDirection </td>
+				<td>@sp.BuildAngleOfRepose </td>
+				<td>@sp.ConeShellStepDistance </td>
+				<td>@sp.InitialLongTravelPosition</td>
+				<td>@sp.InitialLuffAngle </td>
 				<td>@sp.InitialSlewAngle </td>
 				<td>@sp.InitialSlewInnerTurnaroundLimit</td>
 				<td>@sp.InitialSlewOuterTurnaroundLimit </td>
+				<td>@sp.InnerSlewLimit </td>
+				<td>@sp.InnerSlewTurnaroundLimit</td>
+				<td>@sp.LongTravelStepLength </td>
+				<td>@sp.OuterSlewLimit </td>
+				<td>@sp.OuterSlewTurnaroundLimit </td>
+				<td>@sp.ParBench1SlewAngle </td>
+				<td>@sp.PilgrimStepLength </td>
+				<td>@sp.PlannedBuildProductIdentifier</td>
+				<td>@sp.ReclaimerQuadrant </td>
+				<td>@sp.ReclaimRateSetpoint </td>
+				<td>@sp.StackerNo </td>
+				<td>@sp.StackingFormulaIdentifier </td>
+				<td>@sp.StackingRegimeIdentifier </td>
+				<td>@sp.StartLuffingAngle </td>
+				<td>@sp.StartPositionOffset </td>
+				<td>@sp.StockpileCapacity </td>
+				<td>@sp.StockpileCentreLimit </td>
+				<td>@sp.StockpileEndLimit </td>
+				<td>@sp.StockpileLength </td>
+				<td>@sp.StockpileServiceTypeIdentifier</td>
+				<td>@sp.StockpileStartLimit </td>
+				
 			</tr>
 		
 		}
