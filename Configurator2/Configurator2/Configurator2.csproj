@@ -171,6 +171,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\enumEditStatus.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="product.cs">
       <DependentUpon>BRMO_IntegrationContext.tt</DependentUpon>
@@ -238,6 +239,7 @@
     <Content Include="Views\Products\ProductForm.cshtml" />
     <Content Include="Views\Stockpiles\Index.cshtml" />
     <Content Include="Views\Stockpiles\StockpileForm.cshtml" />
+    <Content Include="Views\Home\EnableEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

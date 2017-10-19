@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Configurator2.Models
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -24,6 +26,19 @@
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Stockpiles", "Index", "Stockpiles")</li>
                 </ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+						@if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled) 
+						{
+							<li>@Html.ActionLink("Editing Enabled", "DisableEdit", "Home") </li>
+						} else 
+						{
+							<li> @Html.ActionLink("Editing Disabled", "EnableEdit", "Home") </li >
+ 						}
+
+					</ul>
+
             </div>
         </div>
     </div>

@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.EditDisabled{
+	color:red;
+}
+
+.EditEnabled{
+	color:lightgreen;
+}

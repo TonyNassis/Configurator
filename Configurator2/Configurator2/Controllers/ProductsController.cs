@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Configurator2.Controllers {
+
 	public class ProductsController : Controller {
 
 		//--- set up the context for the controller
@@ -44,8 +45,11 @@ namespace Configurator2.Controllers {
 				TLSPattern = product.TLSPattern,
 				ParPercentageBlending = product.ParPercentageBlending
 			};
-
-			ViewBag.Passed = true;
+	
+			if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled)
+				ViewBag.Passed = true;
+			else
+				ViewBag.Passed = false;
 
 			return View("ProductForm", viewModel);
 		}
