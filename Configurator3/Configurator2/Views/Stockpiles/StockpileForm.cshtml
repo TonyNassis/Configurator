@@ -26,6 +26,26 @@
 
 		<tbody>
 
+			<tr>
+				<td>
+					@Html.LabelFor(m => m.NumberOfReclaimBenches)
+				</td>
+				<td>
+					@Html.DropDownListFor(
+						m => m.NumberOfReclaimBenches,
+						new SelectList(
+							new List<object> {
+								new { value = 2, text="2x Benches"},
+						  		new { value = 3, text="3x Benches"}
+							},
+							"value",
+							"text"
+						)
+						, EditAttr
+					 )
+				</td>
+			</tr>
+
 			<tr><td>@Html.LabelFor(m => m.Bench1LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench1LongTravelPosition, EditAttr)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.Bench1LuffAngle)</td><td>@Html.TextBoxFor(m => m.Bench1LuffAngle, EditAttr)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.Bench2LongTravelPosition)</td><td>@Html.TextBoxFor(m => m.Bench2LongTravelPosition, EditAttr)</td></tr>
@@ -81,6 +101,7 @@
 					 )
 				</td>
 			</tr>
+
 			<tr><td>@Html.LabelFor(m => m.StartLuffingAngle)</td><td>@Html.TextBoxFor(m => m.StartLuffingAngle, EditAttr)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StartPositionOffset)</td><td>@Html.TextBoxFor(m => m.StartPositionOffset, EditAttr)</td></tr>
 			<tr><td>@Html.LabelFor(m => m.StockpileCapacity)</td><td>@Html.TextBoxFor(m => m.StockpileCapacity, EditAttr)</td></tr>

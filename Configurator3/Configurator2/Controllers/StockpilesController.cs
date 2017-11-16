@@ -97,6 +97,7 @@ namespace Configurator2.Controllers {
 				InitialSlewAngle = stockpile.InitialSlewAngle,
 				InitialSlewInnerTurnaroundLimit = stockpile.InitialSlewInnerTurnaroundLimit,
 				InitialSlewOuterTurnaroundLimit = stockpile.InitialSlewOuterTurnaroundLimit,
+				NumberOfReclaimBenches = stockpile.NumberOfReclaimBenches
 			};
 
 			if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled)
@@ -157,6 +158,7 @@ namespace Configurator2.Controllers {
 				stockpileInDb.InitialSlewAngle = stockpile.InitialSlewAngle;
 				stockpileInDb.InitialSlewInnerTurnaroundLimit = stockpile.InitialSlewInnerTurnaroundLimit;
 				stockpileInDb.InitialSlewOuterTurnaroundLimit = stockpile.InitialSlewOuterTurnaroundLimit;
+				stockpileInDb.NumberOfReclaimBenches = stockpile.NumberOfReclaimBenches;
 
 				_context.SaveChanges();
 

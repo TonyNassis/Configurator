@@ -50,5 +50,6 @@ namespace Configurator2.ViewModels {
 		public double? InitialSlewAngle { get; set; }
 		public double? InitialSlewInnerTurnaroundLimit { get; set; }
 		public double? InitialSlewOuterTurnaroundLimit { get; set; }
+		public int? NumberOfReclaimBenches { get; set; }
 	}
 }

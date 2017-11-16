@@ -11,6 +11,7 @@
 			<th>StockpileIdentifier</th>
 			<th>StockpileName</th>
 
+			<th>NumberOfReclaimBenches</th>
 			<th>Bench1LongTravelPosition</th>
 			<th>Bench1LuffAngle </th>
 			<th>Bench2LongTravelPosition</th>
@@ -62,6 +63,7 @@
 					@Html.ActionLink(sp.StockpileName, "Edit", "Stockpiles", new {id=sp.StockpileIdentifier},null)
 				</td>
 				
+				<td>@sp.NumberOfReclaimBenches</td>
 				<td>@sp.Bench1LongTravelPosition</td>
 				<td>@sp.Bench1LuffAngle </td>
 				<td>@sp.Bench2LongTravelPosition</td>
