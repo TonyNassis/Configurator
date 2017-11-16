@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\BlackRock\MISPrograms\Configurator\Configurator2\Configurator2\BRMO_IntegrationContext.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\BlackRock\MISPrograms\Configurator\Configurator3\Configurator2\BRMO_IntegrationContext.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

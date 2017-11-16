@@ -63,6 +63,7 @@
           <Property Name="InitialSlewAngle" Type="float" />
           <Property Name="InitialSlewInnerTurnaroundLimit" Type="float" />
           <Property Name="InitialSlewOuterTurnaroundLimit" Type="float" />
+          <Property Name="NumberOfReclaimBenches" Type="int" />
         </EntityType>
         <EntityContainer Name="BRMO_Integration_ModelStoreContainer">
           <EntitySet Name="product" EntityType="Self.product" Schema="conf" store:Type="Tables" />
@@ -118,6 +119,7 @@
           <Property Name="InitialSlewAngle" Type="Double" />
           <Property Name="InitialSlewInnerTurnaroundLimit" Type="Double" />
           <Property Name="InitialSlewOuterTurnaroundLimit" Type="Double" />
+          <Property Name="NumberOfReclaimBenches" Type="Int32" />
         </EntityType>
         <EntityContainer Name="BRMO_Integration_Context" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Stockpiles" EntityType="Self.Stockpile" />
@@ -144,6 +146,7 @@
           <EntitySetMapping Name="Stockpiles">
             <EntityTypeMapping TypeName="BRMO_Integration_Model.Stockpile">
               <MappingFragment StoreEntitySet="Stockpile">
+                <ScalarProperty Name="NumberOfReclaimBenches" ColumnName="NumberOfReclaimBenches" />
                 <ScalarProperty Name="StockpileIdentifier" ColumnName="StockpileIdentifier" />
                 <ScalarProperty Name="StockpileName" ColumnName="StockpileName" />
                 <ScalarProperty Name="StockpileCapacity" ColumnName="StockpileCapacity" />

@@ -56,5 +56,6 @@ namespace Configurator2
         public Nullable<double> InitialSlewAngle { get; set; }
         public Nullable<double> InitialSlewInnerTurnaroundLimit { get; set; }
         public Nullable<double> InitialSlewOuterTurnaroundLimit { get; set; }
+        public Nullable<int> NumberOfReclaimBenches { get; set; }
     }
 }
