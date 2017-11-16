@@ -1,0 +1,61 @@
+﻿@using Configurator2.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Stockyard Configurator [Rev2]</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Stockyard Configurator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                    <li>@Html.ActionLink("Stockpiles", "Index", "Stockpiles")</li>
+                </ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+						@if (Session[Sessions.EditStatus] == null) {
+							Session[Sessions.EditStatus] = EnumEditStatus.EditDisabled;
+						}
+
+						@if ((int)Session[Sessions.EditStatus] == (int)EnumEditStatus.EditEnabled) 
+						{
+							<li>@Html.ActionLink("Edit Status => Enabled", "DisableEdit", "Home") </li>
+						} else 
+						{
+							<li> @Html.ActionLink("Edit Status => Disabled", "EnableEdit", "Home") </li >
+ 						}
+
+					</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Stockyard Configurator (Rev2 - 19 October 2017)</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
